@@ -26,9 +26,9 @@ h2 {
 
 .sudoku-container {
   border: 2px solid #262626;
-  margin: 0 auto;
+  margin: 1em auto;
   position: relative;
-  padding: 1em 2px;
+  padding: 0 2px;
 }
 
 .sudoku-container input {

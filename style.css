@@ -1,79 +1,123 @@
-#scontrino {
-  width: 384px;
+h2 {
+  text-align: center;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
   margin: 0;
   overflow: hidden;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: #ffffff;
 }
 
-h2 {
-  color: #333333;
-}
-
-.container {
-  width: 384px;
-}
-
 .sudoku-container {
-  border: 2px solid #262626;
-  margin: 1em auto;
+  border: 4px solid #262626;
+  margin: 0 auto;
   position: relative;
   padding: 0 2px;
 }
 
+.sudoku-container::before, .sudoku-container::after {
+  position: absolute;
+  border-style: solid;
+  pointer-events: none;
+  content: "";
+}
+
+.sudoku-container::before {
+  width: 156px;
+  border-width: 0 4px;
+  border-color: transparent #262626 transparent #262626;
+  top: 4px;
+  left: 160px;
+  bottom: 4px;
+}
+
+.sudoku-container::after {
+  height: 156px;
+  border-width: 4px 0;
+  border-color: #262626 transparent #262626 transparent;
+  left: 4px;
+  top: 160px;
+  right: 4px;
+}
+
+tr:nth-child(1) td:nth-child(3) input,
+tr:nth-child(1) td:nth-child(6) input {
+  margin: 0 10px 0 0;
+}
+
+tr:nth-child(3) input,
+tr:nth-child(6) input {
+  margin: 0 0 10px 0;
+}
+
 .sudoku-container input {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   font-size: 20px;
   padding: 0;
-  background-color: #f6f6f6;
-  color: #000000;
+  border: 3px #333333 solid;
+  background-color: #333333;
+  color: #eee;
 }
 
 .sudoku-container input:focus {
-  border-color: #ffffff;
+  border-color: #ff6600;
 }
 
 .sudoku-container input.highlight {
-  background-color: #ffffff;
-  border-color: #333333;
+  background-color: #29B6F6;
+  border-color: #29B6F6;
 }
 
 .sudoku-container input.disabled {
   cursor: not-allowed;
-  background-color: #ffffff;
-  border-color: #ffffff;
+  background-color: #ff6600;
+  border-color: #ff6600;
 }
 
 .sudoku-container input.disabled.highlight {
-  background-color: #ff8800;
-  border-color: #ff8800;
+  background-color: #29B6F6;
+  border-color: #29B6F6;
 }
 
 .sudoku-container .invalid {
-  border-color: #333333;
+  border-color: #e74c3c;
 }
 
 .sudoku-container .invalid:focus {
-  border-color: #333333;
+  border-color: #e74c3c;
 }
 
 .sudoku-container.valid-matrix {
-  border-color: #ffffff;
+  border-color: #ff6600;
 }
 
 #controls {
   margin: 20px 0;
+}
+
+.btn.primary {
+  background-color: #ff6600;
+  -webkit-box-shadow: inset 0 -3px #cc5200;
+          box-shadow: inset 0 -3px #cc5200;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1em;
 }
 /*# sourceMappingURL=style.css.map */
